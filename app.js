@@ -15,7 +15,7 @@ const noProductsMessage = document.querySelector('#no-products-message'); // Par
 // Function to fetch all products from the server
 async function fetchProducts() {
   try {
-    const response = await fetch('http://localhost:3000/products');
+    const response = await fetch('http://18.231.160.220:3000/products');
     if (!response.ok) {
       console.error("Erro ao buscar produtos:", response.status, response.statusText);
       if (noProductsMessage) {
@@ -150,7 +150,7 @@ if (addProductForm) {
 // Function to add a new product
 async function addProduct(name, description, price) {
   try {
-    const response = await fetch('http://localhost:3000/products', {
+    const response = await fetch('http://18.231.160.220:3000/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -176,7 +176,7 @@ async function addProduct(name, description, price) {
 // Function to delete a product
 async function deleteProduct(id) {
   try {
-    const response = await fetch('http://localhost:3000/products/' + id, {
+    const response = await fetch('http://18.231.160.220:3000/products/' + id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -247,7 +247,7 @@ if (updateProductForm) {
 // Function to update a product on the server
 async function updateProductOnServer(id, productData) {
   try {
-    const response = await fetch(`http://localhost:3000/products/${id}`, {
+    const response = await fetch(`http://18.231.160.220:3000/products/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -292,7 +292,7 @@ async function fetchProductById(id) {
     try {
         productDetailsContainer.innerHTML = '<p class="text-slate-500 italic text-center">Buscando...</p>';
 
-        const response = await fetch(`http://localhost:3000/products/${id}`);
+        const response = await fetch(`http://18.231.160.220:3000/products/${id}`);
         
         if (!response.ok) {
             productDetailsContainer.innerHTML = `<p class="text-red-500 text-center">Erro ao buscar produto (ID: ${id}): ${response.status} - ${response.statusText}</p>`;
